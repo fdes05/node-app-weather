@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>404</title>
+    <link rel="icon" href="../../public/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">   
+</head>
+{{!-- The double curly braces {{}} are used to access the dynamic object from the render method in app.js --}}
+<body>
+    <div class="main-content">
+        {{>header}}
+        <p>{{message}}</p>
+    </div>
+    
+    {{>footer}}
+</body>
+
+</html>
