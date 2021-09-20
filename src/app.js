@@ -7,6 +7,10 @@ const { response } = require('express')
 
 // make this an express web server app
 const app = express()
+// Heroku will set the environment variable in our OS which we can access below for the port they use
+// the or (||) is for if we run it locally as then there won't be a port environment varialbe
+const port = process.env.PORT || 3000
+
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -110,6 +114,6 @@ app.get('*', (req, res) => {
 })
 
 // To start the Express server you need to do the following below and define the port and callback function
-app.listen(3000, () => {
-    console.log('server is up on port 3000!')
+app.listen(port, () => {
+    console.log('server is up on port ' + port)
 })
